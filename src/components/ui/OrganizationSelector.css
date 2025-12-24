@@ -1,0 +1,52 @@
+.org-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+}
+
+.org-label {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.org-label.error {
+  color: #dc3545;
+}
+
+.org-select {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  background: white;
+  cursor: pointer;
+  min-width: 180px;
+  transition: border-color 0.2s;
+}
+
+.org-select:hover {
+  border-color: #0066cc;
+}
+
+.org-select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.org-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: #0066cc;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

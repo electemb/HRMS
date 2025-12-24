@@ -1,0 +1,38 @@
+.page-container {
+  padding: 1.25rem;
+  width: 100%;
+  max-width: none;
+  background: var(--color-gray-50);
+  min-height: 100%;
+}
+
+.designation-name {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-900);
+}
+
+.designation-actions {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: flex-end;
+}
+
+.text-muted {
+  color: var(--color-gray-500);
+}
+
+.error-banner {
+  background: var(--color-red-50);
+  border: 1px solid var(--color-red-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: var(--color-red-700);
+}
+
+.error-icon {
+  font-size: 1.25rem;
+}

@@ -1,0 +1,314 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-gray-50);
+}
+
+.app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background: white;
+  border-right: 1px solid var(--color-gray-200);
+  transition: width var(--transition-base), transform var(--transition-base);
+  z-index: var(--z-fixed);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-sidebar--collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.app-sidebar__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-gray-200);
+  min-height: var(--header-height);
+}
+
+.app-sidebar__logo {
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary-600);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: var(--font-bold);
+  font-size: var(--text-lg);
+  flex-shrink: 0;
+}
+
+.app-sidebar__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-900);
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity var(--transition-fast);
+}
+
+.app-sidebar--collapsed .app-sidebar__title {
+  opacity: 0;
+  width: 0;
+}
+
+.app-sidebar__nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4) 0;
+}
+
+.app-sidebar__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-sidebar__nav-item {
+  margin: 0;
+}
+
+.app-sidebar__nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  color: var(--color-gray-700);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  position: relative;
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: inherit;
+  text-align: left;
+}
+
+.app-sidebar__nav-link:hover {
+  background: var(--color-gray-50);
+  color: var(--color-gray-900);
+}
+
+.app-sidebar__nav-link.active {
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+  font-weight: var(--font-medium);
+}
+
+.app-sidebar__nav-arrow {
+  margin-left: auto;
+  font-size: 0.625rem;
+  transition: transform var(--transition-fast);
+}
+
+/* Submenu styles */
+.app-sidebar__submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--color-gray-50);
+  border-left: 2px solid var(--color-primary-200);
+}
+
+.app-sidebar__submenu-item {
+  margin: 0;
+}
+
+.app-sidebar__submenu-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5) var(--space-2) var(--space-8);
+  color: var(--color-gray-600);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  font-size: 0.875rem;
+}
+
+.app-sidebar__submenu-link:hover {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.app-sidebar__submenu-link.active {
+  background: var(--color-primary-100);
+  color: var(--color-primary-700);
+  font-weight: var(--font-medium);
+}
+
+.app-sidebar__nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-primary-600);
+}
+
+.app-sidebar__nav-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-sidebar__nav-text {
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity var(--transition-fast);
+}
+
+.app-sidebar--collapsed .app-sidebar__nav-text {
+  opacity: 0;
+  width: 0;
+}
+
+.app-sidebar__footer {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.app-main {
+  flex: 1;
+  margin-left: 260px;
+  transition: margin-left 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: calc(100% - 260px);
+}
+
+.app-sidebar--collapsed ~ .app-main {
+  margin-left: 64px;
+  width: calc(100% - 64px);
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: white;
+  border-bottom: 1px solid var(--color-gray-200);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-6);
+  gap: var(--space-4);
+}
+
+.app-header__toggle {
+  background: transparent;
+  border: none;
+  padding: var(--space-2);
+  color: var(--color-gray-600);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.app-header__toggle:hover {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.app-header__breadcrumb {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+.app-header__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.app-header__user-info {
+  text-align: right;
+}
+
+.app-header__user-name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-900);
+  display: block;
+}
+
+.app-header__user-role {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  display: block;
+}
+
+.app-header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-100);
+  color: var(--color-primary-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.app-content {
+  flex: 1;
+  padding: 0;
+  min-height: calc(100vh - 64px);
+  width: 100%;
+  max-width: none;
+}
+
+.app-content__header {
+  margin-bottom: var(--space-6);
+}
+
+.app-content__title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-2);
+}
+
+.app-content__description {
+  font-size: var(--text-base);
+  color: var(--color-gray-600);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .app-sidebar--mobile-open {
+    transform: translateX(0);
+  }
+
+  .app-main {
+    margin-left: 0;
+  }
+
+  .app-content {
+    padding: var(--space-4);
+  }
+}

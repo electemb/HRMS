@@ -1,0 +1,148 @@
+.department-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 8px;
+}
+
+.department-form__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.department-form__section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  margin: 0 0 8px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.department-form__row {
+  display: flex;
+  gap: 16px;
+}
+
+.department-form__row > * {
+  flex: 1;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary, #374151);
+}
+
+.form-label.required::after {
+  content: " *";
+  color: var(--error-color, #ef4444);
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary, #1f2937);
+  background-color: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 6px;
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea:disabled {
+  background-color: var(--bg-secondary, #f9fafb);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-textarea.error {
+  border-color: var(--error-color, #ef4444);
+}
+
+.form-textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary, #1f2937);
+  background-color: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 20px;
+  padding-right: 36px;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-select:disabled {
+  background-color: var(--bg-secondary, #f9fafb);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-error {
+  font-size: 13px;
+  color: var(--error-color, #ef4444);
+  margin-top: 4px;
+}
+
+.form-helper-text {
+  font-size: 13px;
+  color: var(--text-secondary, #6b7280);
+  margin-top: 4px;
+}
+
+.department-form__actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .department-form__row {
+    flex-direction: column;
+  }
+
+  .department-form__actions {
+    flex-direction: column;
+  }
+
+  .department-form__actions button {
+    width: 100%;
+  }
+}

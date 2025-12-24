@@ -1,0 +1,11 @@
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.filter-bar__spacer {
+  flex: 1 1 auto;
+}

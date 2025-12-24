@@ -1,0 +1,110 @@
+.organizations-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.organizations-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.organizations-loading,
+.organizations-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16rem;
+}
+
+.organizations-loading-text {
+  color: #6b7280;
+}
+
+.organizations-error-text {
+  color: #dc2626;
+}
+
+.organizations-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.organizations-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.organizations-empty-title {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.organizations-empty-description {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.organizations-empty-action {
+  margin-top: 1.5rem;
+}
+
+.org-name-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.org-name-primary {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.org-name-secondary {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.org-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.org-status-active {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.org-status-inactive {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.org-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.org-action-button {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2563eb;
+  background-color: transparent;
+  border: 1px solid #2563eb;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.org-action-button:hover {
+  background-color: #2563eb;
+  color: white;
+}

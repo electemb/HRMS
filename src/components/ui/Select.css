@@ -1,0 +1,46 @@
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.select__label {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.select__control {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
+  min-width: 220px;
+}
+
+.select__native {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #24292f;
+}
+
+.select__icon {
+  margin-left: 8px;
+  color: #6e7781;
+}
+
+.select--full {
+  width: 100%;
+}
+
+.select__native:disabled {
+  color: #9aa1a9;
+  background: #f6f8fa;
+}

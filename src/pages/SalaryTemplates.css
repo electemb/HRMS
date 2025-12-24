@@ -1,0 +1,112 @@
+.page-container {
+  padding: 1.25rem;
+  width: 100%;
+  max-width: none;
+  background: var(--color-gray-50);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.template-code {
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--primary-light);
+  border-radius: 4px;
+}
+
+.template-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.template-description {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.ctc-range {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.ctc-min {
+  color: var(--success-color);
+}
+
+.ctc-separator {
+  color: var(--text-secondary);
+}
+
+.ctc-max {
+  color: var(--primary-color);
+}
+
+.assigned-count {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.count-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.count-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.templates-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem !important;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.stat-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+}

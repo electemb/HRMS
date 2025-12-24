@@ -1,0 +1,313 @@
+.table-container {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Header */
+.table-header {
+  background-color: var(--color-gray-50);
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.table-header-cell {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.table-header-cell--left {
+  text-align: left;
+}
+
+.table-header-cell--center {
+  text-align: center;
+}
+
+.table-header-cell--right {
+  text-align: right;
+}
+
+/* Body */
+.table-body {
+  background-color: var(--color-white);
+}
+
+.table-row {
+  border-bottom: 1px solid var(--color-gray-100);
+  transition: background-color 0.15s ease;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:hover {
+  background-color: var(--color-gray-50);
+}
+
+.table-row--clickable {
+  cursor: pointer;
+}
+
+.table-row--clickable:hover {
+  background-color: var(--color-primary-50);
+}
+
+.table-cell {
+  padding: 0.75rem 1rem;
+  color: var(--color-gray-900);
+  vertical-align: middle;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.table-cell--left {
+  text-align: left;
+}
+
+.table-cell--center {
+  text-align: center;
+}
+
+.table-cell--right {
+  text-align: right;
+}
+
+/* Loading State */
+.table-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-16) var(--spacing-4);
+  color: var(--color-gray-600);
+}
+
+.table-loading p {
+  margin-top: var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-gray-200);
+  border-top-color: var(--color-primary-600);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Empty State */
+.table-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-16) var(--spacing-4);
+  color: var(--color-gray-500);
+}
+
+.table-empty-icon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-4);
+  opacity: 0.5;
+}
+
+.table-empty-text {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+/* Search */
+.table-search {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  background-color: var(--color-gray-50);
+}
+
+.table-search-results {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  white-space: nowrap;
+}
+
+/* Sortable Headers */
+.table-header-cell--sortable {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background-color var(--transition-fast);
+}
+
+.table-header-cell--sortable:hover {
+  background-color: var(--color-gray-100);
+}
+
+.table-header-cell--sorted {
+  color: var(--color-primary-700);
+  background-color: var(--color-primary-50);
+}
+
+.table-header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.table-sort-icon {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  transition: color var(--transition-fast);
+}
+
+.table-header-cell--sortable:hover .table-sort-icon {
+  color: var(--color-gray-600);
+}
+
+.table-header-cell--sorted .table-sort-icon {
+  color: var(--color-primary-600);
+}
+
+/* Pagination */
+.table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--color-gray-200);
+  background-color: var(--color-gray-50);
+}
+
+.table-pagination-info {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.table-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.table-pagination-btn {
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.table-pagination-btn:hover:not(:disabled) {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+}
+
+.table-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.table-pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.table-pagination-page {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 36px;
+  text-align: center;
+}
+
+.table-pagination-page:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+}
+
+.table-pagination-page--active {
+  background-color: var(--color-primary-600);
+  color: var(--color-white);
+  border-color: var(--color-primary-600);
+}
+
+.table-pagination-page--active:hover {
+  background-color: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+}
+
+.table-pagination-ellipsis {
+  padding: var(--spacing-2);
+  color: var(--color-gray-500);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table {
+    font-size: var(--font-size-xs);
+  }
+
+  .table-header-cell,
+  .table-cell {
+    padding: var(--spacing-2) var(--spacing-3);
+  }
+
+  .table-search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-pagination {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .table-pagination-info {
+    text-align: center;
+  }
+
+  .table-pagination-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

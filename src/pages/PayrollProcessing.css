@@ -1,0 +1,262 @@
+.payroll-processing-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Current Period Card */
+.current-period-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem !important;
+}
+
+.period-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.period-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.period-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.period-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-value.highlight {
+  font-size: 1.75rem;
+  color: #4ade80;
+}
+
+.period-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+/* Payroll Steps */
+.payroll-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 2px solid var(--gray-200);
+  transition: all 0.2s ease;
+}
+
+.step.completed {
+  background: var(--success-light);
+  border-color: var(--success-color);
+}
+
+.step.current {
+  background: var(--primary-light);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.step.pending {
+  background: white;
+  opacity: 0.7;
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step.completed .step-icon {
+  background: var(--success-color);
+  color: white;
+}
+
+.step.current .step-icon {
+  background: var(--primary-color);
+  color: white;
+}
+
+.step.pending .step-icon {
+  background: var(--gray-200);
+  color: var(--text-secondary);
+}
+
+.step-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Previous Periods */
+.periods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.period-item {
+  padding: 1.25rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.period-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.period-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.period-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.period-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summary-label {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.summary-value.strong {
+  font-size: 1.125rem;
+  color: var(--success-color);
+}
+
+.period-actions-small {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .period-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .period-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .period-actions,
+  .period-actions-small {
+    flex-direction: column;
+  }
+
+  .period-actions button,
+  .period-actions-small button {
+    width: 100%;
+  }
+}
